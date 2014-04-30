@@ -33,7 +33,7 @@
           <div class="checkbox">
             <label>
               <input type="checkbox" name="track_links" id="track_links" <?php if(get_option('track_links')=='on'): ?> checked="checked" <?php endif; ?>>
-              Track events (Downloads, Mailto & Outbound URLs) </label>
+              Track events (Downloads, Mailto &amp; Outbound URLs) </label>
           </div>
         </div>
       </div>
@@ -82,6 +82,5 @@
     </form>
   </div>
   <div class="clearfix"></div>
-  <div class="row col-lg-6">Have a question? Drop us a question at <a href="http://onlineads.lt/?utm_source=WordPress&utm_medium=Google%20Universal%20Analytics%202.2&utm_content=Google%20Universal%20Analytics&utm_campaign=WordPress%20plugins" title="Google Universal Analytics">OnlineAds.lt</a> </div>
 </div>
 </br>
