@@ -1,5 +1,5 @@
 <div class="wrap">
-  <h2>Google Universal Analytics</h2>
+  <h2>Universal Analytics Settings</h2>
   <br />
   <div class="col-lg-6 row">
     <form class="form-horizontal" role="form" id="google-universal-options">
