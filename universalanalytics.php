@@ -58,33 +58,19 @@ function deactive_google_universal_analytics() {
 
 
 
-
-
+/**
+	 * This adds the options page for this plugin to the Options page
+	 */
 function admin_menu_google_universal_analytics() {
-
-
-
- 
-
-  global  $settings_page, $settings_page1;
-
-  
-
-  $settings_page	=	add_menu_page( 'Google Universal Analytics', 'Google Universal Analytics', 'manage_options', 'google_universal_analytics', 'options_page_google_universal_analytics' );
-
-  add_submenu_page('google_universal_analytics','','','manage_options','google_universal_analytics','options_page_google_universal_analytics');
-
- $settings_page1	=	 add_submenu_page( 'google_universal_analytics', 'Universal Analytics', 'Universal Analytics', 'manage_options', 'google_universal_analytics', 'options_page_google_universal_analytics' );
-
-
-
+  global  $settings_page;
+  $settings_page	=	add_options_page( 'Google Analytics', 'Google Analytics', 'manage_options', 'google_universal_analytics', 'options_page_google_universal_analytics' );
 }
 
 
 
 function options_page_google_universal_analytics() {
 
-  include(WP_PLUGIN_DIR.'/google-universal-analytics/options.php');  
+  include(WP_PLUGIN_DIR.'/wp-universal-analytics/options.php');  
 
 }
 
@@ -115,11 +101,11 @@ function google_universal_analytics_scripts($hook){
 
 		//register styles
 
-		wp_register_style( 'bootstrap-css', plugins_url( 'google-universal-analytics/bootstrap/css/bootstrap.min.css' , dirname(__FILE__) ) );
+		wp_register_style( 'bootstrap-css', plugins_url( 'wp-universal-analytics/bootstrap/css/bootstrap.min.css' , dirname(__FILE__) ) );
 
-		wp_register_style( 'bootstrap-switch-css', plugins_url( 'google-universal-analytics/bootstrap/css/bootstrap-switch.min.css' , dirname(__FILE__) ) );
+		wp_register_style( 'bootstrap-switch-css', plugins_url( 'wp-universal-analytics/bootstrap/css/bootstrap-switch.min.css' , dirname(__FILE__) ) );
 
-		wp_register_style( 'main-css', plugins_url( 'google-universal-analytics/assets/gua-main.css' , dirname(__FILE__) ) );
+		wp_register_style( 'main-css', plugins_url( 'wp-universal-analytics/assets/gua-main.css' , dirname(__FILE__) ) );
 
 		
 
@@ -127,11 +113,11 @@ function google_universal_analytics_scripts($hook){
 
 		wp_register_script( 'google-js', '//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js', array(), '', true );
 
-		wp_register_script( 'bootstrap-js', plugins_url( 'google-universal-analytics/bootstrap/js/bootstrap.min.js' , dirname(__FILE__) ), array('google-js'), '', true );
+		wp_register_script( 'bootstrap-js', plugins_url( 'wp-universal-analytics/bootstrap/js/bootstrap.min.js' , dirname(__FILE__) ), array('google-js'), '', true );
 
-		wp_register_script( 'bootstrap-switch-js', plugins_url( 'google-universal-analytics/bootstrap/js/bootstrap-switch.min.js' , dirname(__FILE__) ) , array('bootstrap-js'),'',true );
+		wp_register_script( 'bootstrap-switch-js', plugins_url( 'wp-universal-analytics/bootstrap/js/bootstrap-switch.min.js' , dirname(__FILE__) ) , array('bootstrap-js'),'',true );
 
-		wp_register_script( 'main-js', plugins_url( 'google-universal-analytics/assets/gua-main.js' , dirname(__FILE__) ) , array('google-js'),'',true );
+		wp_register_script( 'main-js', plugins_url( 'wp-universal-analytics/assets/gua-main.js' , dirname(__FILE__) ) , array('google-js'),'',true );
 
 		
 
