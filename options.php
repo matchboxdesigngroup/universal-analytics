@@ -12,8 +12,8 @@
       <div class="form-group">
         <label for="web_property_id" class="col-sm-3 control-label">Tracking ID</label>
         <div class="col-sm-9">
-          <input type="text" class="form-control" name="web_property_id" id="web_property_id" placeholder="Tracking code example: UA-­23710711-­7" value="<?php echo get_option('web_property_id'); ?>">
-          <span class="error hide"><strong>Error! </strong> match your code with this forma: UA-41115660-1</span> </div>
+          <input type="text" class="form-control" name="web_property_id" id="web_property_id" placeholder="Tracking code example: UA-30199046-1" value="<?php echo get_option('web_property_id'); ?>">
+          <span class="error hide"><strong>Error! </strong> match your code with this format: UA-30199046-1</span> </div>
       </div>
       <div class="form-group">
         <label for="web_property_id" class="col-sm-3 control-label"></label>
@@ -42,7 +42,7 @@
           <div class="checkbox">
             <label>
               <input type="checkbox" name="enable_display" id="enable_display" <?php if(get_option('enable_display')=='on'): ?> checked="checked" <?php endif; ?>>
-              Enable Display Advertising <span style="color:green;">New!</span> </label>
+              Enable Display Advertising</label>
           </div>
         </div>
       </div>
@@ -51,7 +51,7 @@
           <div class="checkbox">
             <label>
               <input type="checkbox" name="anonymize_ip" id="anonymize_ip" <?php if(get_option('anonymize_ip')=='on'): ?> checked="checked" <?php endif; ?>>
-              Anonymize IP <span style="color:green;">New!</span> </label>
+              Anonymize IP</label>
           </div>
         </div>
       </div>
