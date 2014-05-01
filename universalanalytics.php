@@ -2,8 +2,8 @@
 /*
 Plugin Name: Universal Analytics
 Plugin URI: http://wordpress.org/extend/plugins/universal-analytics/
-Description: Adds <a href="http://www.google.com/analytics/">Google's Universal Analytics</a> tracking code to all pages.
-Version: 0.1
+Description: A simple method to add Google's Universal Analytics JavaScript tracking code to your WordPress website.
+Version: 1.0
 Author: Matchbox Design Group
 Author URI: http://matchboxdesigngroup.com/
 */
