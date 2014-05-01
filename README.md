@@ -1,4 +1,4 @@
-universal-analytics
+Universal Analytics
 ===================
 
 A WordPress plugin that provides a simple method to add Google's Universal Analytics JavaScript tracking code to your WordPress website.
