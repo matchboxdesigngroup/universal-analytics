@@ -18,7 +18,7 @@ if (!defined('WP_PLUGIN_DIR'))
       define('WP_PLUGIN_DIR', WP_CONTENT_DIR.'/plugins');
 
 //when turning off analytics, delete these options from the database
-function deactive_google_universal_analytics() {
+function mdg_deactive_google_universal_analytics() {
   delete_option('web_property_id');
   delete_option('in_footer');
   delete_option('plugin_switch');
@@ -30,22 +30,22 @@ function deactive_google_universal_analytics() {
 }
 
 // This adds the options page for this plugin to the Options page
-function admin_menu_google_universal_analytics() {
+function mdg_admin_menu_google_universal_analytics() {
   global  $settings_page;
-  $settings_page	=	add_options_page( 'Google Analytics', 'Google Analytics', 'manage_options', 'google_universal_analytics', 'options_page_google_universal_analytics' );
+  $settings_page	=	add_options_page( 'Google Analytics', 'Google Analytics', 'manage_options', 'mdg_google_universal_analytics', 'mdg_options_page_google_universal_analytics' );
 }
 
 // Load the options page (the markup)
-function options_page_google_universal_analytics() {
+function mdg_options_page_google_universal_analytics() {
   include(WP_PLUGIN_DIR.'/wp-universal-analytics/options.php');  
 }
 
 // This contains the output of the tracking code
-function google_universal_analytics() {
+function mdg_google_universal_analytics() {
   require 'tracking-code.php';
 }
 
-function google_universal_analytics_scripts($hook){
+function mdg_google_universal_analytics_scripts($hook){
 		global  $settings_page, $settings_page1;
 
 		if($hook != $settings_page && $hook != $settings_page1)
@@ -74,16 +74,16 @@ function google_universal_analytics_scripts($hook){
 		wp_enqueue_script( 'main-js' );
 }
 
-register_deactivation_hook(__FILE__, 'deactive_google_universal_analytics');
+register_deactivation_hook(__FILE__, 'mdg_deactive_google_universal_analytics');
 
 if (is_admin()) {
-  add_action('admin_enqueue_scripts', 'google_universal_analytics_scripts');		
-  add_action('admin_menu', 'admin_menu_google_universal_analytics');
+  add_action('admin_enqueue_scripts', 'mdg_google_universal_analytics_scripts');		
+  add_action('admin_menu', 'mdg_admin_menu_google_universal_analytics');
 }
 
-add_action('init', 'display_google_universal_analytics_code');
+add_action('init', 'mdg_display_google_universal_analytics_code');
 
-function display_google_universal_analytics_code(){
+function mdg_display_google_universal_analytics_code(){
 
 		global $current_user;
 		$user_roles = $current_user->roles;
@@ -94,31 +94,31 @@ function display_google_universal_analytics_code(){
 	if(get_option('tracking_off_for_role')=='on' && strcasecmp($user_role , get_option('tracking_off_for_this_role'))!=0){
 		if (!is_admin() && get_option('plugin_switch')=='on') {
 			if(get_option('in_footer')=='on'){
-				add_action('wp_footer', 'google_universal_analytics');
+				add_action('wp_footer', 'mdg_google_universal_analytics');
 			}else{
-				add_action('wp_head', 'google_universal_analytics');
+				add_action('wp_head', 'mdg_google_universal_analytics');
 			}
 		}
 	}elseif(is_user_logged_in() && get_option('tracking_off_for_role')!='on'){
 		if (!is_admin() && get_option('plugin_switch')=='on') {
 			if(get_option('in_footer')=='on'){
-				add_action('wp_footer', 'google_universal_analytics');
+				add_action('wp_footer', 'mdg_google_universal_analytics');
 			}else{
-				add_action('wp_head', 'google_universal_analytics');
+				add_action('wp_head', 'mdg_google_universal_analytics');
 			}
 		}
 	}elseif(!is_user_logged_in()){
 		if (!is_admin() && get_option('plugin_switch')=='on') {
 			if(get_option('in_footer')=='on'){
-				add_action('wp_footer', 'google_universal_analytics');
+				add_action('wp_footer', 'mdg_google_universal_analytics');
 			}else{
-				add_action('wp_head', 'google_universal_analytics');
+				add_action('wp_head', 'mdg_google_universal_analytics');
 			}
 		}
 	}
 }
 
-function save_google_universal_analytics_settings() {
+function mdg_save_google_universal_analytics_settings() {
 
 	// The $_REQUEST contains all the data sent via ajax
 
@@ -146,5 +146,5 @@ function save_google_universal_analytics_settings() {
    die();
 }
 
-add_action( 'wp_ajax_save_google_universal_analytics_settings', 'save_google_universal_analytics_settings' );
+add_action( 'wp_ajax_mdg_save_google_universal_analytics_settings', 'mdg_save_google_universal_analytics_settings' );
 ?>

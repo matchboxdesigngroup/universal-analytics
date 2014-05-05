@@ -118,7 +118,7 @@ jQuery(document).ready(function(e) {
 
         			data: {
 
-            				'action':'save_google_universal_analytics_settings',
+            				'action':'mdg_save_google_universal_analytics_settings',
 
             				'plugin_switch' : plugin_switch,
 
@@ -226,7 +226,7 @@ jQuery(function() {
 
         			data: {
 
-            				'action':'save_google_custom_analytics_settings',
+            				'action':'mdg_save_google_custom_analytics_settings',
 
             				'custom_in_footer' : custom_in_footer,
 
@@ -342,7 +342,7 @@ jQuery(function(){
 
         			data: {
 
-            				'action':'save_google_classic_analytics_settings',
+            				'action':'mdg_save_google_classic_analytics_settings',
 
             				'classic_plugin_switch' : classic_plugin_switch,
 
