@@ -148,6 +148,8 @@ jQuery(document).ready(function(e) {
 
 					jQuery('.form-horizontal .alert').delay(3000).fadeOut(500);		
 
+					location.reload();
+
 						
 
         			},
@@ -245,6 +247,7 @@ jQuery(function() {
 					jQuery('.form-horizontal .alert').fadeIn().removeClass('hide');
 
 					jQuery('.form-horizontal .alert').delay(3000).fadeOut(500);		
+
 
 						
 
