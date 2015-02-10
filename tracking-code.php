@@ -34,7 +34,7 @@ $homeurl = str_replace( $find, $replace, $homeurl );
 		var $this = jQuery(this);
       	var href = $this.prop('href').split('?')[0];
 		var ext = href.split('.').pop();
-		if ('xls,xlsx,doc,docx,ppt,pot,pptx,pdf,pub,txt,zip,rar,tar,7z,exe,wma,mov,avi,wmv,wav,mp3,midi,csv,tsv,jar,psd,pdn,ai,pez,wwf'.split(',').indexOf(ext) !== -1) {		
+		if ( typeof Array.prototype.indexOf !== 'undefined' && 'xls,xlsx,doc,docx,ppt,pot,pptx,pdf,pub,txt,zip,rar,tar,7z,exe,wma,mov,avi,wmv,wav,mp3,midi,csv,tsv,jar,psd,pdn,ai,pez,wwf'.split(',').indexOf(ext) !== -1) {
         ga('send', 'event', 'Download', ext, href);
       }
 	  if (href.toLowerCase().indexOf('mailto:') === 0) {
@@ -46,4 +46,4 @@ $homeurl = str_replace( $find, $replace, $homeurl );
   	});
   });
 </script>
-<?php endif; 
+<?php endif;
