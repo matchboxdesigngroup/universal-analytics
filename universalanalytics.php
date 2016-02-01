@@ -128,6 +128,9 @@ function mdg_save_google_universal_analytics_settings() {
 
 	if ( isset($_REQUEST) ) {
 		$property_id = $_REQUEST['property_id'];
+		$id_regex = 'UA-[0-9]+-[0-9]+';
+		$valid_id = (preg_match($id_regex, null) === false);
+		$property_id = ( $valid_id ) ? $property_id : '';
 		$in_footer = $_REQUEST['in_footer'];
 		$plugin_switch = $_REQUEST['plugin_switch'];
 		$track_links = $_REQUEST['track_links'];
