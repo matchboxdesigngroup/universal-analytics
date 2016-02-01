@@ -24,6 +24,12 @@ jQuery(document).ready(function(e) {
 				var in_footer	=	'off';
 			}
 
+			var nonce = '';
+			var $nonce = jQuery('#_mdgnonce');
+			if( $nonce.length !== 0){
+				nonce = $nonce.val();
+			}
+
 			if(jQuery('#plugin_switch').is(':checked')){
 				var plugin_switch	=	'on';	
 			}else{
@@ -65,13 +71,14 @@ jQuery(document).ready(function(e) {
     			data: {
         		'action':'mdg_save_google_universal_analytics_settings',
         		'plugin_switch' : plugin_switch,
-						'in_footer' : in_footer,
-						'property_id' : property_id,
-						'track_links' : track_links,
-						'enable_display' : enable_display,							
-						'anonymize_ip' : anonymize_ip,
-						'tracking_off_for_role' 	  : tracking_off_for_role,
-						'tracking_off_for_this_role' : tracking_off_for_this_role
+        		'nonce' : nonce,
+				'in_footer' : in_footer,
+				'property_id' : property_id,
+				'track_links' : track_links,
+				'enable_display' : enable_display,							
+				'anonymize_ip' : anonymize_ip,
+				'tracking_off_for_role' 	  : tracking_off_for_role,
+				'tracking_off_for_this_role' : tracking_off_for_this_role
     			},
 
     			success:function(data) {

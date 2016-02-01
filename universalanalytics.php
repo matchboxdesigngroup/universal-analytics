@@ -119,6 +119,10 @@ function mdg_display_google_universal_analytics_code(){
 }
 
 function mdg_save_google_universal_analytics_settings() {
+	$nonce = ( isset( $_REQUEST['nonce'] ) ) ? $_REQUEST['nonce'] : '';
+	if ( !wp_verify_nonce( $nonce, 'mdg_save_google_universal_analytics_settings' )) {
+		return;
+	}
 
 	// The $_REQUEST contains all the data sent via ajax
 

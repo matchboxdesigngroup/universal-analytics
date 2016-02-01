@@ -3,6 +3,7 @@
   <br />
   <div class="col-lg-6 row">
     <form class="form-horizontal" role="form" id="google-universal-options">
+      <?php wp_nonce_field( 'mdg_save_google_universal_analytics_settings', '_mdgnonce' ); ?>
       <div class="form-group">
         <label for="web_property_id" class="col-sm-3 control-label">Status</label>
         <div class="col-sm-9">
