@@ -13,7 +13,7 @@
       <div class="form-group">
         <label for="web_property_id" class="col-sm-3 control-label">Tracking ID</label>
         <div class="col-sm-9">
-          <input type="text" class="form-control" name="web_property_id" id="web_property_id" placeholder="Tracking code example: UA-30199046-1" value="<?php echo get_option('web_property_id'); ?>">
+          <input type="text" class="form-control" name="web_property_id" id="web_property_id" placeholder="Tracking code example: UA-30199046-1" value="<?php echo esc_attr( get_option('web_property_id') ); ?>">
           <span class="error hide"><strong>Error! </strong> match your code with this format: UA-30199046-1</span> </div>
       </div>
       <div class="form-group">
@@ -67,7 +67,7 @@
               Disable Tracking For
               <select id="tracking_off_for_this_role">
                 <?php foreach($roles as $role) { ?>
-                <option value="<?php echo $role;?>" <?php if(get_option('tracking_off_for_this_role')== $role){echo 'selected="selected"';} ?>><?php echo $role;?></option>
+                <option value="<?php echo esc_attr( $role );?>" <?php if(get_option('tracking_off_for_this_role')== $role){echo 'selected="selected"';} ?>><?php echo esc_attr( $role );?></option>
                 <?php } ?>
               </select>
             </label>
