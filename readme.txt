@@ -43,6 +43,7 @@ If you have any problems or want to make a feature request please submit an [iss
 
 = 1.2.1 =
 * SECURITY: Fixed potential XSS vulnerability.
+* SECURITY: Removes external jQuery dependency.
 
 = 1.2.0 =
 * Added alert to walk you through setup
