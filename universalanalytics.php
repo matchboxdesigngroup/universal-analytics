@@ -139,14 +139,14 @@ function mdg_save_google_universal_analytics_settings() {
 		$tracking_off_for_this_role = $_REQUEST['tracking_off_for_this_role'];
 		$tracking_off_for_role = $_REQUEST['tracking_off_for_role'];
 
-		update_option('web_property_id', $property_id);
-  	update_option('in_footer', $in_footer);
- 		update_option('plugin_switch', $plugin_switch);
-		update_option('track_links', $track_links);
-		update_option('enable_display', $enable_display);
-		update_option('anonymize_ip', $anonymize_ip);
-		update_option('tracking_off_for_this_role', $tracking_off_for_this_role);
-		update_option('tracking_off_for_role', $tracking_off_for_role);
+		update_option('web_property_id', sanitize_text_field( $property_id ) );
+		update_option('in_footer', sanitize_text_field( $in_footer ) );
+ 		update_option('plugin_switch', sanitize_text_field( $plugin_switch ) );
+		update_option('track_links', sanitize_text_field( $track_links ) );
+		update_option('enable_display', sanitize_text_field( $enable_display ) );
+		update_option('anonymize_ip', sanitize_text_field( $anonymize_ip ) );
+		update_option('tracking_off_for_this_role', sanitize_text_field( $tracking_off_for_this_role ) );
+		update_option('tracking_off_for_role', sanitize_text_field( $tracking_off_for_role ) );
 	}
 
 	// Always die in functions echoing ajax content
