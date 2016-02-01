@@ -3,7 +3,7 @@ Contributors: matchboxdesigngroup, cwhitmore, dholloran
 Tags: javascript, tracking, google, analytics, universal, statistics, google analytics, universal analytics, google universal analytics, classic, custom
 Requires at least: 3.0
 Tested up to: 3.9
-Stable tag: 1.2.0
+Stable tag: 1.2.1
 License: GPLv2 or later
 
 A simple method to add Google's Universal Analytics JavaScript tracking code to your WordPress website.
@@ -41,6 +41,9 @@ If you have any problems or want to make a feature request please submit an [iss
 
 == Changelog ==
 
+= 1.2.1 =
+* SECURITY: Fixed potential XSS vulnerability.
+
 = 1.2.0 =
 * Added alert to walk you through setup
 * Added alert to let you know if the plugin is turned 'Off'
@@ -52,6 +55,9 @@ If you have any problems or want to make a feature request please submit an [iss
 * Initial release.
 
 == Upgrade Notice ==
+
+= 1.2.1 =
+* This is an important security update to fix a potential XSS vulnerability.
 
 = 1.2.0 =
 * Added alert to walk you through setup
