@@ -57,10 +57,9 @@ function mdg_google_universal_analytics_scripts($hook){
 		wp_register_style( 'main-css', plugins_url( 'universal-analytics/assets/gua-main.css' , dirname(__FILE__) ) );
 
 		// Register scripts
-		wp_register_script( 'google-js', '//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js', array(), '', true );
-		wp_register_script( 'bootstrap-js', plugins_url( 'universal-analytics/bootstrap/js/bootstrap.min.js' , dirname(__FILE__) ), array('google-js'), '', true );
+		wp_register_script( 'bootstrap-js', plugins_url( 'universal-analytics/bootstrap/js/bootstrap.min.js' , dirname(__FILE__) ), array('jquery'), '', true );
 		wp_register_script( 'bootstrap-switch-js', plugins_url( 'universal-analytics/bootstrap/js/bootstrap-switch.min.js' , dirname(__FILE__) ) , array('bootstrap-js'),'',true );
-		wp_register_script( 'main-js', plugins_url( 'universal-analytics/assets/gua-main.js' , dirname(__FILE__) ) , array('google-js'),'',true );
+		wp_register_script( 'main-js', plugins_url( 'universal-analytics/assets/gua-main.js' , dirname(__FILE__) ) , array('jquery'),'',true );
 
 		// Enqueue styles
 		wp_enqueue_style( 'bootstrap-css' );
@@ -68,7 +67,7 @@ function mdg_google_universal_analytics_scripts($hook){
 		wp_enqueue_style( 'main-css' );
 
 		// Enqueue scripts
-		wp_enqueue_script( 'google-js' );
+		wp_enqueue_script( 'jquery' );
 		wp_enqueue_script( 'bootstrap-js' );
 		wp_enqueue_script( 'bootstrap-switch-js' );
 		wp_enqueue_script( 'main-js' );
